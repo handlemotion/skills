@@ -1,0 +1,63 @@
+---
+title: Codice
+description: A legal and fiscal index of the Mexican tax system, made so AI answers about it with sources.
+date: "2026-10"
+url: https://codice.io
+role: Brand, design and development
+---
+
+<figure>
+  <Img src="/images/work/codice/hero-dark.webp" alt="The Codice name over a grid of its marks, each line morphing from a square to a circle" width="2400" height="1500" loading="lazy" draggable="false" />
+</figure>
+
+Codice is an index of Mexican tax, the SAT's rules and the law they rest on, made for AI to read. When a model gets a fiscal question it looks the answer up in Codice and tells you where it came from.
+
+It started inside [Transitive](https://transitive.app), the fiscal automation pipeline we build for freight forwarders, and it's been answering there for a couple of months now. These days it's also a public API and MCP server, so anyone can plug it into whatever AI they already use. I designed and built it, with a lot of feedback from the accountants we work with.
+
+## Confidently wrong
+
+At Transitive we added an agent to explain fiscal failures, why an invoice got rejected and what to do about it. The people reading those explanations are accountants, really good ones, and the answers were wrong and hard to read on top of that. Rules that had already changed, regimes mixed up, and every confusing word you can think of. Something like
+
+> The rejection stems from the RegimenFiscalReceptor not being compatible with the UsoCFDI, per the applicable catalog.
+
+What a terrible, terrible message haha. We were working with a lot of pretty important companies and their accountants, and this wasn't doing anyone any favors.
+
+## Raw context
+
+We tried the usual fixes first, small embeddings and then the SAT's documents as markdown references, and the models still did whatever they wanted. What ended up working was an index. Every rule and article is its own passage, with its source and the dates it's valid, and the model searches it, reads it and quotes it.
+
+<figure>
+  <Img src="/images/work/codice/chat.webp" alt="A question about which CFDI use applies to medical fees, answered with key D01 and its sources" width="2400" height="1500" loading="lazy" draggable="false" />
+</figure>
+
+The word for word quoting started as an accuracy thing. Over time we found that working with the reference tools each AI chat already has is just as accurate and way easier to follow, so now the quote is pretty much raw context. The tone is up to whoever's using it, each app's agent and its users can talk however they like and still be right.
+
+<figure>
+  <Img src="/images/work/codice/context-light.webp" alt="What a model gets back from Codice for c_UsoCFDI D01, the catalog entry with its validity dates and SAT source" width="2400" height="1501" loading="lazy" draggable="false" />
+</figure>
+
+It ships as an MCP server and an API because that's the easiest thing to set up. Plugging an adapter into the AI you already use is a lot simpler than having developers and users work around an SDK. We actually built a whole agent on top of Codice at some point and then dropped it, people already have an AI they like talking to, so it made more sense to make that one smarter. An SDK is still in the cards, depending on what we end up building with it.
+
+To keep it accurate there's a loop running on its own. Opus 5.5 throws about 250 questions at Codice, over and over, and checks every answer against the real documents. What it catches the most is our test agents answering from memory without looking anything up, which is honestly more of a harness problem, and one we keep chasing. The content comes straight from the SAT and gets refreshed every week, or sooner whenever they publish a change.
+
+## Rules change
+
+Rules change all the time in accounting, and I've seen accountants find out about a change years later. The mark is about that, a circle, a square and a triangle drawn as one line that keeps turning into the next one. The name goes the same way, a codex is clean, organized knowledge that keeps growing, and no matter how much it changes it comes down to the basics.
+
+The dashboard follows the same idea, a rail of icons, one column, one typeface, two inks and some hairlines, dark by default and light if you want it.
+
+<figure>
+  <Img src="/images/work/codice/rail-tip-light.webp" alt="The dashboard's icon rail with the Claves tooltip, beside the usage page on the light theme" width="2280" height="1425" loading="lazy" draggable="false" />
+</figure>
+
+## Where it is now
+
+Codice is in open beta. We all work with AI now, accountants too, and hallucinations or outdated rules are a real risk in their line of work. If Codice helps them get better answers out of the tools they already use, that's more than enough reason to put it out there. Through Transitive we're already seeing their agents get friendlier and more accurate, and that feedback is shaping what comes next.
+
+<figure>
+  <Img src="/images/work/codice/uso-30-dark.webp" alt="Thirty days of a team's requests as stacked daily columns, one color per member" width="2400" height="1500" loading="lazy" draggable="false" />
+</figure>
+
+It's closed source, and it costs very little to run beyond the maintenance I was already doing before it split from Transitive. I want to keep it that way so nobody needs yet another AI subscription to get their taxes right, and thanks to Cloudflare being so generous we can offer it for free while we figure out costs and volume. Next up is setup, right now it asks for a bit of technical knowledge and it really shouldn't.
+
+<p className="credits thanks">Thanks to Intercom and its companies, and to the accountants working with Transitive, for the feedback.</p>

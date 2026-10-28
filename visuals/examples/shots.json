@@ -1,0 +1,21 @@
+[
+  { "out": "shots/uso-30-dark.png", "url": "http://localhost:5173/?dias=30", "theme": "dark",
+    "localStorage": { "codice-theme": "dark" }, "cookieJar": "jar.txt",
+    "target": "section:has(figure)", "frameW": 960, "top": 100 },
+  { "out": "shots/rail-tip-light.png", "url": "http://localhost:5173/", "theme": "light",
+    "localStorage": { "codice-theme": "light" }, "cookieJar": "jar.txt",
+    "viewport": { "width": 960, "height": 600 }, "keepMouse": true, "freeze": true,
+    "actions": [{ "hover": "nav[aria-label=Principal] [aria-label=Claves]", "wait": 1800 }],
+    "target": "nav[aria-label=Principal]", "frameW": 760, "left": 0, "top": 0 },
+  { "out": "shots/chat.png", "url": "https://codice.io", "theme": "dark",
+    "actions": [
+      { "press": "/" },
+      { "type": "¿Qué uso de CFDI le pongo a una factura de honorarios médicos?" },
+      { "press": "Enter", "wait": 30000 }
+    ],
+    "hide": ["h1", "svg[preserveAspectRatio=none]"],
+    "target": "text=¿Qué uso de CFDI le pongo", "bottom": "main button",
+    "frameW": 800, "centerX": 975 },
+  { "out": "shots/context-light.png", "url": "file:///path/to/context.html",
+    "viewport": { "width": 1100, "height": 688 }, "dpr": 2.2, "theme": "light" }
+]

@@ -1,0 +1,120 @@
+<!doctype html>
+<!--
+  A brand hero: the product's mark repeated in a grid of whole cells, edge gaps equal to the gaps
+  between marks, with the product's name (and its mark) cut into the centre cells so it sits on
+  the grid. Copy this file next to your shots, paste the mark into <template id="mark">, set the
+  tokens, then shoot it with frame.mjs (no target, viewport 1440x900, dpr 2).
+
+  Query params: theme=dark|light, cell=180 (px per cell, rounded to whole rows and columns),
+  span=auto (centre cells the name takes; auto fits the name with a cell's air), name=Product, fs=54 (name size px),
+  wave=fade|turn|none (how the marks vary across the grid), t=0..1 (where the wave is).
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* Tokens: copy them from the product's design doc. Font: the product's own, by URL. */
+      @font-face {
+        font-family: Brand;
+        src: url(brand-font.woff2);
+      }
+      :root {
+        --ink: #0a0a0b;
+        --fg: #ededef;
+        --line: #2a2a2e;
+      }
+      html[data-theme="light"] {
+        --ink: #e8e8e8;
+        --fg: #0a0a0b;
+        --line: #c9c9c9;
+      }
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: var(--ink);
+        color: var(--fg);
+        font-family: Brand, "Inter", system-ui, sans-serif;
+      }
+      #field {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        color: var(--line);
+      }
+      .name {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.32em;
+        background: var(--ink);
+        line-height: 1;
+        white-space: nowrap;
+      }
+      .name svg {
+        width: 1em;
+        height: 1em;
+        color: var(--fg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- The mark, drawn in a 24-unit box with currentColor strokes or fills. -->
+    <template id="mark">
+      <rect x="4" y="4" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" />
+    </template>
+    <svg id="field" fill="none"></svg>
+    <div class="name" id="name"><svg viewBox="0 0 24 24" id="lead"></svg><span id="label"></span></div>
+    <script type="module">
+      // Measures the name in the brand font, so wait for it.
+      await document.fonts.load("54px Brand").catch(() => {});
+      const q = new URLSearchParams(location.search);
+      if (q.get("theme")) document.documentElement.dataset.theme = q.get("theme");
+      const CELL = +(q.get("cell") ?? 180);
+      const wave = q.get("wave") ?? "fade", t = +(q.get("t") ?? 0.5);
+      const mark = document.getElementById("mark").innerHTML;
+      const W = innerWidth, H = innerHeight;
+      const rows = Math.max(1, Math.round(H / CELL)), cols = Math.max(1, Math.round(W / CELL));
+      const cw = W / cols, ch = H / rows, size = Math.min(cw, ch) * 0.9;
+      // The name's width at its size decides how many centre cells it takes, keeping it centred.
+      const fs = +(q.get("fs") ?? Math.round(ch * 0.3));
+      const probe = Object.assign(document.createElement("span"), { textContent: q.get("name") ?? "Product" });
+      Object.assign(probe.style, { position: "absolute", visibility: "hidden", whiteSpace: "nowrap", fontSize: fs + "px" });
+      document.body.append(probe);
+      const need = probe.getBoundingClientRect().width + fs * 1.32 + cw * 0.5;
+      probe.remove();
+      let span = q.get("span") ? +q.get("span") : Math.ceil(need / cw);
+      if ((cols - span) % 2) span += 1;
+      const midRow = Math.floor(rows / 2), c0 = Math.floor((cols - span) / 2);
+      const field = document.getElementById("field");
+      field.setAttribute("viewBox", `0 0 ${W} ${H}`);
+      const diagonals = cols + rows - 2;
+      for (let row = 0; row < rows; row++)
+        for (let col = 0; col < cols; col++) {
+          if (row === midRow && col >= c0 && col < c0 + span) continue;
+          // 0 at the top left, 1 at the bottom right; the wave's front sits at t.
+          const d = (col + row) / diagonals;
+          const k = Math.min(1, Math.max(0, (t - d) * 3 + 0.5));
+          const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+          const s = size / 24, cx = col * cw + cw / 2, cy = row * ch + ch / 2;
+          const turn = wave === "turn" ? 90 * k : 0;
+          g.setAttribute("transform", `translate(${cx} ${cy}) rotate(${turn}) scale(${s}) translate(-12 -12)`);
+          if (wave === "fade") g.setAttribute("opacity", 0.35 + 0.65 * k);
+          g.innerHTML = mark;
+          field.append(g);
+        }
+      const name = document.getElementById("name");
+      Object.assign(name.style, {
+        left: c0 * cw + "px",
+        top: midRow * ch + "px",
+        width: span * cw + "px",
+        height: ch + "px",
+        fontSize: fs + "px",
+      });
+      document.getElementById("lead").innerHTML = mark;
+      document.getElementById("label").textContent = q.get("name") ?? "Product";
+    </script>
+  </body>
+</html>

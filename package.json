@@ -1,0 +1,9 @@
+{
+  "name": "handlemotion-skills",
+  "private": true,
+  "type": "module",
+  "description": "Rodrigo Jiménez's agent skills.",
+  "dependencies": {
+    "playwright-core": "1.56.1"
+  }
+}
