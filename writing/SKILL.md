@@ -29,9 +29,10 @@ His own sentence, the reference for tone:
 ## Voice
 
 - First person. "I" for what he designed, built or decided alone; "we" for the team, the
-  company and the people he works with (Transitive, the accountants, the studio).
+  company and the people he works with. He is part of the teams he writes about (Transitive is
+  his company, Chow Mein his studio), so "our studio", "we", never "the studio" or "theirs".
 - Conversational words are welcome: "pretty", "honestly", "way easier", "a lot", "at some
-  point", "haha" (sparingly, once per piece at most, where something is actually funny).
+  point", "haha" (only where something is actually funny, once per piece at most, zero is fine).
 - Commas over colons. "We added an agent to explain fiscal failures, why an invoice got rejected
   and what to do about it", never "...failures: why...". Semicolons almost never. Bullets only
   for genuinely long lists.
@@ -49,15 +50,17 @@ His own sentence, the reference for tone:
 
 - **Open** with what it is in one or two plain sentences, then where it came from and his role.
   No hook line, no scene-setting about "the age of AI".
-- **3 to 5 sections**, titles short and concrete, the way he'd label a chapter: "Confidently
+- **3 to 5 sections** (2 or 3 in a short piece, fewer sections beats thin paragraphs), titles short and concrete, the way he'd label a chapter: "Confidently
   wrong", "Raw context", "Rules change", "Where it is now", "Why I built it", "Less app",
   "Review, live". Titles must fit on one line in a sidebar (about 24 characters).
 - **Paragraphs** of 3–5 sentences. Never one title per single paragraph, and never more than two
   paragraphs in a row without an image when the piece has images (the `visuals` skill makes them).
 - **Each section answers a why**: the problem he hit, what was tried first and dropped, the
   decision and what it cost, what he's proudest of, what's next.
-- **End** where the project actually is, what's next, then thanks if any. Thanks go in one short
-  line, set apart (small grey text), not a paragraph.
+- **End** where the project actually is, what's next, then thanks if any. Thanks to people or
+  companies go in one short line, set apart (small grey text), not a paragraph. A tool or library
+  the work depends on is credited inline where it matters ("it wouldn't exist without S2 by
+  Stephen Balogh").
 
 ## Tells (rewrite on sight)
 
@@ -74,6 +77,10 @@ These read as AI marketing slop to him, aggressively:
   "empower", "unlock", "elevate".
 - Explaining the joke or the feeling ("which is honestly exciting"), and summary paragraphs that
   repeat what the section said.
+- The soft flip, "X wasn't really why I built it though", and recap counts that restate a list
+  ("That's six tools for one job").
+- Invented colour, meaning details, scenes or judgments that aren't in his facts ("screen after
+  screen", "mostly a coordination problem"). Ask instead.
 
 When one shows up, say the plain thing instead. "It's an MCP server and an API, not a product of
 its own" becomes "It ships as an MCP server and an API because that's the easiest thing to set
