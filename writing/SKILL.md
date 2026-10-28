@@ -51,10 +51,11 @@ His own sentence, the reference for tone:
 - **Open** with what it is in one or two plain sentences, then where it came from and his role.
   No hook line, no scene-setting about "the age of AI".
 - **3 to 5 sections** (2 or 3 in a short piece, fewer sections beats thin paragraphs), titles short and concrete, the way he'd label a chapter: "Confidently
-  wrong", "Raw context", "Rules change", "Where it is now", "Why I built it", "Less app",
+  wrong", "How it works", "Rules change", "Where it is now", "Why I built it", "Less app",
   "Review, live". Titles must fit on one line in a sidebar (about 24 characters). Keep them
-  plain and easy to get at a glance, never dramatic ("The reckoning", "Confidently wrong") or
-  cryptic ("Raw context", "Less app" only works because the section explains it right away).
+  plain and easy to get at a glance, never overdramatic ("The reckoning", "Everything changed") or
+  cryptic ("Raw context" became "How it works"). A little wit is fine when it's instantly clear,
+  he likes "Confidently wrong" for a section about models answering wrong with confidence.
 - **Paragraphs** of 3–5 sentences. Never one title per single paragraph, and never more than two
   paragraphs in a row without an image when the piece has images (the `visuals` skill makes them).
 - **Each section answers a why**: the problem he hit, what was tried first and dropped, the
