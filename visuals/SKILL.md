@@ -38,8 +38,8 @@ shot at 3× and cropped so one subject sits where the eye lands.
    `node <skill>/scripts/frame.mjs shots.json`. Run `npm install` once at the skills repo root
    first. For a public site's live feature (a chat), shoot the live site only if the request
    allows it and the feature is public, and keep it to one or two requests.
-5. **Review every image** at about 1400px wide (`sips -Z 1400` or `magick -resize 1400x`) against
-   the framing rules, fix the spec and reshoot. Done when each one passes all of them.
+5. **Review every image** at about 1400px wide (`sips -Z 1400` or `magick -resize 1400x`) and at
+   its display width (about 680px) against the framing rules, fix the spec and reshoot. Done when each one passes all of them.
 6. **Show the user** the images (send the files) before inserting them anywhere, with one line
    each on what it shows.
 7. **Export** each approved PNG to webp, never upscaled:
@@ -68,6 +68,10 @@ shot at 3× and cropped so one subject sits where the eye lands.
   really returns.
 - **Overlays must not cut text.** If an open menu covers a title, show a tooltip instead or
   change the viewport.
+- **Lines survive the downscale.** Pages show a 2400px image at 600–700px, so hairlines vanish.
+  Draw background patterns at about 2px (at dpr 2) in a tone a step lighter than the product's
+  line token, and check every image at its real display width (`magick -resize 680x`) before
+  calling it done.
 - **Hero graphics align to their grid.** Whole cells, edge gaps equal to inner gaps, and the
   name occupying grid cells. For an animated mark, freeze it mid-transition so the grid shows a
   wave across states (as in `examples/hero-dark.webp`).

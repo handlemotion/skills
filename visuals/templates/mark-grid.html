@@ -18,15 +18,17 @@
         font-family: Brand;
         src: url(brand-font.woff2);
       }
+      /* --line is the grid's stroke: a step lighter than the product's hairline token, so the
+         pattern still reads when the image is shown at 600-700px. */
       :root {
         --ink: #0a0a0b;
         --fg: #ededef;
-        --line: #2a2a2e;
+        --line: #3d3d43;
       }
       html[data-theme="light"] {
         --ink: #e8e8e8;
         --fg: #0a0a0b;
-        --line: #c9c9c9;
+        --line: #b4b4b8;
       }
       html,
       body {
@@ -63,7 +65,7 @@
   <body>
     <!-- The mark, drawn in a 24-unit box with currentColor strokes or fills. -->
     <template id="mark">
-      <rect x="4" y="4" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" />
+      <rect x="4" y="4" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" />
     </template>
     <svg id="field" fill="none"></svg>
     <div class="name" id="name"><svg viewBox="0 0 24 24" id="lead"></svg><span id="label"></span></div>
