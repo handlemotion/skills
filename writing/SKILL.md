@@ -65,6 +65,13 @@ His own sentence, the reference for tone:
   the work depends on is credited inline where it matters ("it wouldn't exist without S2 by
   Stephen Balogh").
 
+## Bios and intros
+
+A home page intro or bio is short, about four paragraphs of one or two sentences: what he does,
+what he's on now, where he came from, and the ask. Interview answers are for you, not for the
+page, so leave out names, timelines, tech stacks and backstory unless he asks for them. When he
+says a draft is cringey, keep its structure and fix the wording rather than rewriting it longer.
+
 ## Tells (rewrite on sight)
 
 These read as AI marketing slop to him, aggressively:
