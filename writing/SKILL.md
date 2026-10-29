@@ -34,7 +34,8 @@ His own sentence, the reference for tone:
 - Conversational words are welcome: "pretty", "honestly", "way easier", "a lot", "at some
   point", "haha" (only where something is actually funny, once per piece at most, zero is fine).
 - Commas over colons. "We added an agent to explain fiscal failures, why an invoice got rejected
-  and what to do about it", never "...failures: why...". Semicolons almost never. Bullets only
+  and what to do about it", never "...failures: why...". The one place a colon is right is
+  introducing an example or quote, "Something like:". Semicolons almost never. Bullets only
   for genuinely long lists.
 - Run-on is fine when it sounds like speech: "We actually built a whole agent on top of it at
   some point and then dropped it, people already have an AI they like talking to, so it made
@@ -50,20 +51,38 @@ His own sentence, the reference for tone:
 
 - **Open** with what it is in one or two plain sentences, then where it came from and his role.
   No hook line, no scene-setting about "the age of AI".
-- **3 to 5 sections** (2 or 3 in a short piece, fewer sections beats thin paragraphs), titles short and concrete, the way he'd label a chapter: "Confidently
-  wrong", "How it works", "Rules change", "Where it is now", "Why I built it", "Less app",
-  "Review, live". Titles must fit on one line in a sidebar (about 24 characters). Keep them
-  plain and easy to get at a glance, never overdramatic ("The reckoning", "Everything changed") or
-  cryptic ("Raw context" became "How it works"). A little wit is fine when it's instantly clear,
-  he likes "Confidently wrong" for a section about models answering wrong with confidence.
+- **3 to 5 sections** (2 or 3 in a short piece, fewer sections beats thin paragraphs). Each
+  title says what the section is for, so the sidebar alone reads as the story: "Confidently
+  wrong", "Answers with sources", "Keeping it accurate", "Built for your AI", "Where it is now",
+  "Why I built it". Titles must fit on one line in a sidebar (about 24 characters). Never vague
+  or generic ("Rules change" became "Keeping it accurate", "How it works" became "Answers with
+  sources", "Less app" became "Built for your AI"), never overdramatic ("The reckoning",
+  "Everything changed") or cryptic ("Raw context"). A little wit is fine when it's instantly
+  clear, he likes "Confidently wrong" for a section about models answering wrong with confidence.
+- **One chain of thought.** Each section follows from the one before, the problem, then what
+  fixed it and why that fixes it, then what keeps it fixed, then what that meant for the product,
+  then where it is. Open each section by picking up the thread ("So the fix was getting the model
+  to look things up instead", "An index only helps if it's current"), and end the problem section
+  on its cause so the next one can answer it. Paragraphs that each start a new idea, or a section
+  that could be moved anywhere, mean the order or the link is missing. When a piece reads
+  disjointed, rewrite it from the facts in order instead of patching single sentences. The same goes inside a
+  paragraph, each sentence follows from the last. When a sentence doesn't belong where it is, move
+  it to the section it's about or drop it, never reword it to force a link ("so I built our own,
+  starting with the naming" was a forced link to the section right after it). A short list of
+  what he prioritized can set up the sections that follow, each section then picks one up.
 - **Paragraphs** of 3–5 sentences. Never one title per single paragraph, and never more than two
   paragraphs in a row without an image when the piece has images (the `visuals` skill makes them).
+- **Length**: about 350–450 words of prose, like `case-studies/bisel.mdx`. Cut lines that only
+  describe styling ("a rail of icons, one typeface, two inks and some hairlines") unless they
+  answer a why, and say plainly what he actually did. A decision that only gets a line or two (the
+  brand tacked onto another section, say) gets cut, give it a real section or leave it out.
 - **Each section answers a why**: the problem he hit, what was tried first and dropped, the
   decision and what it cost, what he's proudest of, what's next.
 - **End** where the project actually is, what's next, then thanks if any. Thanks to people or
   companies go in one short line, set apart (small grey text), not a paragraph. A tool or library
-  the work depends on is credited inline where it matters ("it wouldn't exist without S2 by
-  Stephen Balogh").
+  the work depends on is credited inside the sentence about the thing it made possible ("Those
+  live sessions are the part I'm proudest of, and they run on S2 by Stephen Balogh"), never
+  tacked onto the end of a paragraph that was about something else.
 
 ## Bios and intros
 
@@ -77,7 +96,10 @@ says a draft is cringey, keep its structure and fix the wording rather than rewr
 These read as AI marketing slop to him, aggressively:
 
 - The contrast flip: "it's not X, it's Y", "X isn't an annoyance, it's a rejected invoice",
-  "nobody needs X, they need Y", "Context, not answers" as a title.
+  "nobody needs X, they need Y", "Context, not answers" as a title. Also its quieter versions,
+  the before/after ("Feedback got lost between SyncSketch projects. Now you upload a version
+  and..."), a tacked-on "instead of Y", "has a catch, X", and openers like "So the fix was doing
+  X instead". Say what it does now, the old way already lives in the problem section.
 - The lesson frame: "when you do X, it's much better to Y", "in the age of X, doing Y beats Z".
 - The colon reveal: "the quote became what it really is: raw context", "That's the point:".
 - Clipped dramatic closers after a long paragraph: "An accountant could tell in a second.",
