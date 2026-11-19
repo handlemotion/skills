@@ -1,6 +1,6 @@
 ---
 name: writing
-description: Rodrigo Jiménez's (Handlemotion) writing voice for case studies, project write-ups, posts, READMEs' prose and any long-form copy he publishes. Use whenever writing or editing prose that goes out under his name, such as "write the case study", "fix the copy", "make this sound like me", "this reads like AI", or drafting a project page for jimenez.works or handlemotion. Not for UI microcopy, which follows the product's own design doc.
+description: Rodrigo Jiménez's (Handlemotion) writing voice for case studies, project write-ups, posts, READMEs' prose and any long-form copy he publishes. Use whenever writing or editing prose that goes out under his name, such as "write the case study", "fix the copy", "make this sound like me", "this reads like AI", or drafting a project page for jimenez.works or handlemotion. Also for updates and TLDRs he sends his team, in English or Spanish. Not for UI microcopy, which follows the product's own design doc.
 ---
 
 # Writing
@@ -91,6 +91,21 @@ what he's on now, where he came from, and the ask. Interview answers are for you
 page, so leave out names, timelines, tech stacks and backstory unless he asks for them. When he
 says a draft is cringey, keep its structure and fix the wording rather than rewriting it longer.
 
+## Team updates and TLDRs
+
+A TLDR for his staff, in whatever language the team uses, is a few short paragraphs of what
+they need to act on: what the project is, the best material, the risk, the next step and where
+the full notes live. Write it for what they already know. They didn't read the
+source book or the whole transcript, so a detail that only means something against that ("X
+didn't even come up") goes. Check every claim against how the production actually works before
+it goes in. Don't guess at rights or logistics, "we have rights to the audio" or
+"a chance to shoot it" were both wrong guesses (the call was recorded for us, and nobody is
+flying out, so the ask is that someone already there shoots it for us).
+
+Never leak the conversation into the copy. What he told you in chat only shapes what you write,
+so no "the audio is ours to use", "confirmed by Rodrigo", "we're not
+flying" restated as a line. When a fact changes the plan, write the plan; the fact stays out.
+
 ## Tells (rewrite on sight)
 
 These read as AI marketing slop to him, aggressively:
@@ -111,6 +126,9 @@ These read as AI marketing slop to him, aggressively:
   repeat what the section said.
 - The soft flip, "X wasn't really why I built it though", and recap counts that restate a list
   ("That's six tools for one job").
+- Announce lines that say nothing on their own: "José talked most of the time and has some great
+  lines", "Two things to watch", "Something to keep on the radar". Cut them and start with the
+  thing itself.
 - Invented colour, meaning details, scenes or judgments that aren't in his facts ("screen after
   screen", "mostly a coordination problem"). Ask instead.
 
